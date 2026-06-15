@@ -4,7 +4,7 @@ Currently developing a computational biology project leveraging structural bioin
 
 ## Overview
 
-This project focuses on identifying structural shifts between the deoxy and oxyhaemoglobin states. By calculating and comparing pocket widths, the script provides insights into the protein's coordination spheres. This work is an ongoing effort to bridge structural analysis with predictive tools for haemoglobinopathies and pharmaceutical research.
+This project focuses on identifying structural shifts between the deoxy and oxyhaemoglobin states. I initiated this project to bridge the gap between static structural data and dynamic conformational analysis, driven by a deep interest in the biophysics of haemoglobin. By calculating and comparing pocket widths, the script provides insights into the protein's coordination spheres. This work is an ongoing effort to bridge structural analysis with predictive tools for haemoglobinopathies and pharmaceutical research.
 
 ## Usage
 
