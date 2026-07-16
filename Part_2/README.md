@@ -10,11 +10,11 @@ Enclosed within this repository is the systematic analysis of the haemoglobin an
 * **How I did it**: By utilising Biopython I processed the PDB files to isolate the specific atomic and residue data required for this study.
 * **Why it was needed**: Parsing was essential to strip away irrelevant structural information and isolate the specific ligand and protein data points necessary for subsequent geometric analysis.
 
-## Structural Interrogation: Coordinate Mapping
+## Structural Interrogation: Bidning Site Idenitification
 
-* **What I did**: I calculated the precise XYZ coordinates and centroids for the binding pocket within the haemoglobin scaffold.
-* **How I did it**: I implemented mathematical logic to compute the geometric centre of the binding site relative to the protein structure.
-* **Why it was needed**: Obtaining these exact XYZ coordinates was necessary to define the precise location of the binding pocket in the haemoglobin R state. Without this mathematical spatial data it is not possible to confirm the exact positioning of the drug within the target protein.
+* **What I did**: I shifted my approach from calculating a general geometric centroid to programmatically identifying the exact biological binding site for Voxelotor.
+* **How I did it**: I wrote a script to parse the 1HHO.pdb file, specifically instructing the system to navigate to the alpha chain and extract the coordinates of the Nitrogen (N) atom on the N-terminal Valine (Val1).
+* **Why it was needed**: Voxelotor forms a covalent bond specifically with this N-terminal Valine. By isolating the coordinates of this exact residue rather than a broad pocket centroid, I ensured my docking grid is perfectly anchored to the site where the drug actually binds.
 
 ## Molecular Visualisation: 3D Binding Analysis
 
