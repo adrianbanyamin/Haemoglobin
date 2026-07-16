@@ -10,7 +10,7 @@ Enclosed within this repository is the systematic analysis of the haemoglobin an
 * **How I did it**: By utilising Biopython I processed the PDB files to isolate the specific atomic and residue data required for this study.
 * **Why it was needed**: Parsing was essential to strip away irrelevant structural information and isolate the specific ligand and protein data points necessary for subsequent geometric analysis.
 
-## Structural Interrogation: Bidning Site Idenitification
+## Structural Interrogation: Binding Site Identification
 
 * **What I did**: I shifted my approach from calculating a general geometric centroid to programmatically identifying the exact biological binding site for Voxelotor.
 * **How I did it**: I wrote a script to parse the 1HHO.pdb file, specifically instructing the system to navigate to the alpha chain and extract the coordinates of the Nitrogen (N) atom on the N-terminal Valine (Val1).
