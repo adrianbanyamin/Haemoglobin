@@ -24,16 +24,14 @@ Enclosed within this repository is the systematic analysis of the haemoglobin an
 
 ## Molecular Interactions Matrix and Free Energy Evaluation
 
-* **What I did**: I condensed the raw interaction data and integrated the unified counts into an additive empirical scoring function to calculate the Gibbs free energy ($\Delta G$).
-* **How I did it**: I filtered out automated software redundancy by mapping raw atomic contacts to distinct, unique residue interactions:
-  * **Hydrogen Bonds**: 5 unique residues (LYS 40, LEU 48, HIS 50, HIS 77, ASP 79) condensed from 11 raw atomic lines to remove donor-acceptor inflation.
-  * **Hydrophobic Interactions**: 5 unique non-polar patches (PHE 41, LYS 66, VAL 67, LEU 88, LEU 141) condensed from 10 raw contacts to resolve local spatial redundancy.
-  * **Salt Bridges**: 2 unique residue-level ion pairs condensed from 4 raw entries to eliminate carboxylate double-counting.
-  * **Pi-Cation Interactions**: 1 unique delocalized system (His63) condensed from 2 raw entries to accurately reflect imidazole ring electronic stabilization.
-* **Why it was needed**: Automated tools overestimate binding networks by double-counting individual atom alignments. Distilling these into true molecular networks provides an accurate, non-inflated landscape. To compute the final thermodynamic driving force, these counts are evaluated using standard energy weights where $\omega_{HB} = -1.5$, $\omega_{HY} = -0.05$, $\omega_{salt} = -2.0$, and $\omega_{\pi} = -1.0$ kcal/mol:
+Automated profiling software tends to overestimate binding networks by double-counting individual atom alignments within the same residue sidechains. To resolve this spatial redundancy and filter out local inflation, I mapped the raw atomic contacts back to distinct, unique residue interactions. 
+
+This distillation consolidated 11 raw hydrogen bond lines down to 5 unique residues (LYS 40, LEU 48, HIS 50, HIS 77, ASP 79) to eliminate donor-acceptor inflation. Similarly, 10 raw hydrophobic contacts were condensed to 5 unique non-polar patches (PHE 41, LYS 66, VAL 67, LEU 88, LEU 141). For the electrostatic networks, 4 raw salt bridge entries were reduced to 2 unique residue-level ion pairs to remove carboxylate double-counting, while 2 raw pi-cation entries were standardised to 1 unique delocalised system at His63 to accurately reflect imidazole ring electronic stabilisation.
+
+To compute the final thermodynamic driving force of this configuration, these unified counts were integrated into an additive empirical scoring function using standard energy weights ($\omega_{\text{HB}} = -1.5$, $\omega_{\text{HY}} = -0.05$, $\omega_{\text{salt}} = -2.0$, and $\omega_{\pi} = -1.0$ kcal/mol):
 
 $$\Delta G_{\text{bind}} \approx (n_{\text{HB}} \cdot \omega_{\text{HB}}) + (n_{\text{HY}} \cdot \omega_{\text{HY}}) + (n_{\text{salt}} \cdot \omega_{\text{salt}}) + (n_{\pi} \cdot \omega_{\pi})$$
 
 $$\Delta G_{\text{bind}} \approx (5 \cdot -1.5) + (5 \cdot -0.05) + (2 \cdot -2.0) + (1 \cdot -1.0) = -12.75 \text{ kcal/mol}$$
 
-The final calculated energy of **-12.75 kcal/mol** mathematically confirms a highly spontaneous, thermodynamically favorable binding event driving high nanomolar-range affinity.
+The final calculated energy of **-12.75 kcal/mol** mathematically confirms a highly spontaneous, thermodynamically favourable binding event driving high nanomolar-range affinity.
