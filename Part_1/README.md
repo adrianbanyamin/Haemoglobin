@@ -39,10 +39,3 @@
 | D | Beta | -0.1931 | Significant contraction |
 
 **These results illustrate the mechanical linkage involved in the T-to-R transition, where the iron ion’s transition to a low-spin state pulls the proximal histidine, facilitating the quaternary shift of the tetramer.**
-
-## **Usage**
-
-**To execute the analysis on your local machine, ensure you have the Bio library installed and the necessary .pdb files in your working directory. Run the script via:**
-
-```bash
-python analyse_pocket.py
